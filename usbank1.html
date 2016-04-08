@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>View from the top of the US Bank Tower</title>
+    <meta name="description" content="Photosphere">
+   
+
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+  <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
+   <link rel=stylesheet href="css/nav.css">
+        
+
+  </head>
+  <body>
+
+
+    <div class="nav-top clearfix">
+        <span class="right">
+            <a class="nav-icon icon-th" href="">
+                <span>home</span>
+            </a>
+        </span>
+        <span class="right">
+            <a class="nav-icon icon-left" href="">
+                <span>exit</span>
+            </a>
+        </span>
+    </div>
+
+
+    <a-scene>
+
+      <a-entity camera="" look-controls="enabled: true" wasd-controls="enabled: false" rotation="-30 -270 60" position="0 0 0">
+        <a-entity 
+        position="0 0 -0.5" 
+        geometry="primitive: ring; radiusOuter: 0.010; radiusInner: 0.007" 
+        material="color: #4CC3D9; shader: flat; transparent: true; opacity: 0.5" 
+        cursor="fuse: true; maxDistance: 500; timeout: 1000" raycaster=""></a-entity>
+      </a-entity>
+      
+
+      <a-sky src="panotower_soft1.jpg" rotation "0 0 0"></a-sky>
+
+      <a-entity light="type: ambient; color: #EEE; intensity: 0.1" position="-4 1 -10"></a-entity>
+
+
+      <a-entity text="text: The view from the US Bank Tower" position="-4.8 1.5
+       -8" material="color: gray"></a-entity>
+
+      <a-entity text="text: 1,018 feet above sea level" scale="0.7 0.7 0.7" position="-3 .7
+       -8" material="color: gray"></a-entity>
+
+        <a-image src="img/408_spring_info.png" id="408_spring" width="13" height="8" position="7.5 -2 3.5" rotation="-5 240 0"  scale="1 1 1" opacity="1" visible="false"></a-image>
+
+      <a-entity><a-image src="img/hover_over.png" width="3" height="3" position="7.5 -4.5 3.5" rotation="-5 240 0"
+          scale=".5 .5 .5"
+          opacity=".8"
+          visible="true">
+              <a-mouseenter target="#408_spring" visible="true"></a-mouseenter>
+              <a-mouseleave target="#408_spring" visible="false"></a-mouseleave>
+
+   
+
+          <!-- <a-animation attribute="scale" from=".7 .7 .7" to=".9 .9 .9" dur="10000" fill="forwards" repeat="indefinite" easting="ease-in-out"</a-animation> -->
+
+             
+
+      </a-image></a-entity>
+
+
+
+      <!-- primrose info -->
+
+        
+
+    </a-scene>
+
+      
+
+
+
+      </script>
+
+
+
+
+
+
+</body>

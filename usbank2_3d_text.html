@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The view from the top of the US Bank Tower</title>
+    <meta name="description" content="Photosphere">
+
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    
+    <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
+
+    
+
+    <link rel=stylesheet href="css/nav.css">
+  </head>
+  
+
+  <body>
+    <div class="nav-top clearfix">
+        <span class="right">
+            <a class="nav-icon icon-th" href="">
+                <span>home</span>
+            </a>
+        </span>
+        <span class="right">
+            <a class="nav-icon icon-left" href="">
+                <span>exit</span>
+            </a>
+        </span>
+    </div>
+
+
+    <a-scene>
+      <a-entity camera="" look-controls="enabled: true" wasd-controls="enabled: false" rotation="-30 -270 60" position="0 0 0">
+        <a-entity 
+        position="0 0 -0.5" 
+        geometry="primitive: ring; radiusOuter: 0.010; radiusInner: 0.007" 
+        material="color: #4CC3D9; shader: flat; transparent: true; opacity: 0.5" 
+        cursor="fuse: true; maxDistance: 500; timeout: 1000" raycaster=""></a-entity>
+      </a-entity>  
+
+      <a-sky src="pano_1.jpg" rotation "0 0 0"></a-sky>
+
+      <a-entity light="type: ambient; color: #EEE; intensity: 0.1" position="-4 1 -10"></a-entity>
+
+      <a-entity text="text: The view from the US Bank Tower" position="-4.8 1.5
+       -8" material="color: gray"></a-entity>
+
+      <a-entity text="text: 1,018 feet above sea level" scale="0.7 0.7 0.7" position="-3 .7
+       -8" material="color: gray"></a-entity>
+
+     <!--   spring -->
+
+      <a-image src="img/spring_info.png" id="springinfo" width="13" height="8" position="15 -3 8" rotation="-12 240 0"  scale=".7 .7 .7" opacity="1" visible="false"></a-image>
+
+      <a-entity><a-image src="img/hover_over.png" id="springtrigger" width="3" height="3" position="7.5 -4.5 3.5" rotation="-5 240 0"
+          scale=".5 .5 .5"
+          opacity="1"
+          visible="true">
+
+              <!-- makes the trigger bop to hover -->
+              
+              <a-mouseenter target="#springtrigger" opacity=".7" scale=".4 .4 .4"></a-mouseenter>
+              <a-mouseleave target="#springtrigger" opacity="1" scale="0.5 0.5 0.5"></a-mouseleave>
+
+              <!-- makes the infocard pop up -->
+
+              <a-mouseenter target="#springinfo" visible="true"></a-mouseenter>
+              <a-mouseleave target="#springinfo" visible="false"></a-mouseleave>              
+      </a-image></a-entity>
+
+
+     <!--  wilshire -->
+
+      <a-image src="img/wilshire_info.png" id="wilshireinfo" width="13" height="8" position="-22 5 4" rotation="5 100 0"  scale="1.3 1.3 1.3" opacity="1" visible="false"></a-image>
+
+       <a-entity><a-image src="img/hover_over.png" id="wilshiretrigger" width="3" height="3" position="-22 -4.5 5" rotation="0 110 0"
+          scale="1.2 1.2 1.2"
+          opacity="1"
+          visible="true">
+
+              <!-- makes the trigger bop to hover -->
+
+
+              <a-mouseenter target="#wilshiretrigger" opacity=".7" scale=".9 .9 .9"></a-mouseenter>
+              <a-mouseleave target="#wilshiretrigger" opacity="1" scale="1.2 1.2 1.2"></a-mouseleave>
+
+
+              <!-- makes the infocard pop up -->
+
+
+              <a-mouseenter target="#wilshireinfo" visible="true"></a-mouseenter>
+              <a-mouseleave target="#wilshireinfo" visible="false"></a-mouseleave>
+                
+      </a-image></a-entity>
+
+     
+
+
+
+    </a-scene>
+  </body>
